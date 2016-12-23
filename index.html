@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>white&red</title>
 	<link rel="stylesheet" href="main.css">
 	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
@@ -11,14 +12,14 @@
 		<video autoplay  poster="video/bart_in_the_car.png" id="video" loop>
 			<source src="video/bart_in_the_car.webm" type="video/webm">
 		</video>
-		<input type="range" name="volume" class="player-slider" min="0" max="1" step="0.05" value="1">
+		<!-- <input type="range" name="volume" class="player-slider" min="0" max="1" step="0.05" value="1"> -->
 	</div>
 	<header>
 		<div class="head-container">
 			<div class="logo">
 				<img src="imgs/logo.png" alt="">
 			</div>
-			
+			<input type="range" name="volume" class="player-slider" min="0" max="1" step="0.05" value="1">
 			<div class="contacts">
 				<div class="phone">+38 099-66-99</div>
 				<div class="phone">+38 066-99-66</div>
@@ -40,8 +41,8 @@
 
 	<script>
 		const player = document.querySelector('.player');
-		const video = player.querySelector('#video');
-		const ranges = player.querySelectorAll('.player-slider');
+		const video = document.querySelector('#video');
+		const ranges = document.querySelectorAll('.player-slider');
 		const menuItems = document.querySelectorAll('.menu-item');
 
 		function handleRangeUpdate() {
