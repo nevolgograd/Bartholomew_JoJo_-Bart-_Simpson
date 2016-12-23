@@ -47,7 +47,7 @@ header {
   margin: 5px 0 0 45px;
   min-width: 50%;
   height: 50px;
-  opacity: 0.5;
+  opacity: 0.7;
 
   transition: 1s opacity 0.01s;
 }
@@ -65,14 +65,17 @@ section:hover {
 .player-slider {
   margin-top: 15px !important;
   min-width: 100px;
-  height:30px;
-  opacity: 0.5;
-  transition: 1s opacity ease-in-out;
+  height: 20px;
+  background: rgba(203,76,86, 0.3);
+  border: 1px #000 solid;
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: 0.5s opacity ease-in-out;
 }
 
 input[type=range] {
   -webkit-appearance: none;
-  background:transparent;
+  /*background:transparent;*/
   width: 50%;
   margin: 0 5px;
 }
@@ -83,46 +86,37 @@ input[type=range]:focus {
 
 input[type=range]::-webkit-slider-runnable-track {
   width: 50%;
-  height: 8.4px;
+  height: 1px;
   cursor: pointer;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
-  background: rgba(255,255,255,0.8);
-  border-radius: 1.3px;
-  border: 0.2px solid rgba(1, 1, 1, 0);
+  background: transparent;
+
+  /*border: 1px transparent solid;*/
 }
 
 input[type=range]::-webkit-slider-thumb {
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
-  height: 15px;
-  width: 15px;
+  height: 50px;
+  width: 50px;
+  border: 5px rgba(0,0,0, 0.8) solid;
   border-radius: 50px;
-  background: #d01410;
+  background: linear-gradient(to right, rgba(208, 23, 70, 0.7), rgba(138, 24, 67, 0.7));
   cursor: pointer;
   -webkit-appearance: none;
-  margin-top: -3.5px;
-  box-shadow:0 0 2px rgba(0,0,0,0.2);
-}
-
-input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #fff;
+  margin-top: -25px;
+  box-shadow:0 0 5px rgba(0,0,0,0.2);
 }
 
 input[type=range]::-moz-range-track {
   width: 50%;
-  height: 8.4px;
+  height: 1px;
   cursor: pointer;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
-  background: #ffffff;
-  border-radius: 1.3px;
-  border: 0.2px solid rgba(1, 1, 1, 0);
+  background: transparent;
 }
 
 input[type=range]::-moz-range-thumb {
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
-  height: 15px;
-  width: 15px;
+  height: 50px;
+  width: 50px;
   border-radius: 50px;
-  background: #d01410;
+  background: linear-gradient(to right, rgba(208, 23, 70, 0.7), rgba(138, 24, 67, 0.7));
   cursor: pointer;
 }
 /*-------------------*/
@@ -137,7 +131,7 @@ input[type=range]::-moz-range-thumb {
   line-height: 20px;
   text-align: center;
   font-size: 1.2em;
-  opacity: 0.5;
+  opacity: 0.7;
   transition: 1s opacity ease-in-out;
 }
 
@@ -153,7 +147,7 @@ input[type=range]::-moz-range-thumb {
 .menu-item {
   text-decoration: none;
   color: #000;
-  opacity: 0.5;
+  opacity: 0.6;
   transition: 0.2s opacity ease-in-out;
 }
 

@@ -12,7 +12,6 @@
 		<video autoplay  poster="video/bart_in_the_car.png" id="video" loop>
 			<source src="video/bart_in_the_car.webm" type="video/webm">
 		</video>
-		<!-- <input type="range" name="volume" class="player-slider" min="0" max="1" step="0.05" value="1"> -->
 	</div>
 	<header>
 		<div class="head-container">
@@ -45,9 +44,11 @@
 		const ranges = document.querySelectorAll('.player-slider');
 		const menuItems = document.querySelectorAll('.menu-item');
 
+
 		function handleRangeUpdate() {
  			video[this.name] = this.value;
 		}
+
 
 		function addClass() {
 			this.classList.add('opacity');
@@ -57,11 +58,25 @@
 			this.classList.remove('opacity');
 		}
 
+		// function curveSliderMove() {
+		// 	var sliderValue = this.value;
+		// 	let styleStr = '<style type="text/css">input[type=range]::-webkit-slider-thumb { height:' + this.value*100 + ' px; width:' + this.value*100 + 'px; margin-top:' + this.value*100 +' px; }</style>';
+		// 	let attrAfter = 'input[type=range]::-webkit-slider-thumb:before { content:""; position:absolute; top: ' + this.value*100 +' %; left: ' + this.value*100 +' %; width: ' + this.value*100 +' px; height: ' + this.value*100 +' px; background:#000; border-radius:50%; }';
+ 	// 		console.log(sliderValue);
+ 	// 		ranges.style.backgroundColor = 'rgba(203,76,86, ' + sliderValue + ')';
+		// }
+
+		// ranges.forEach(range => range.addEventListener('change', curveSliderMove));
+		// ranges.forEach(range => range.addEventListener('mousemove', curveSliderMove));
+
+
 		ranges.forEach(range => range.addEventListener('change', handleRangeUpdate));
 		ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate));
 
-	  menuItems.forEach(menuItem => menuItem.addEventListener('mouseover', addClass));
-	  menuItems.forEach(menuItem => menuItem.addEventListener('mouseout', removeClass));
+
+		menuItems.forEach(menuItem => menuItem.addEventListener('mouseover', addClass));
+	  	menuItems.forEach(menuItem => menuItem.addEventListener('mouseout', removeClass));
+
 	</script>
 </body>
 </html>
