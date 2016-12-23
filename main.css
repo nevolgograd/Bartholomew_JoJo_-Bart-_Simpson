@@ -1,0 +1,245 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.opacity {
+  opacity: 1 !important;
+}
+
+#video { 
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  background: url('video/bart_in_the_car.png') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+
+/*----------HEADER-------*/
+
+header {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to right, rgba(208, 23, 70, 0.7), rgba(138, 24, 67, 0.7));
+}
+
+.head-container {
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px #000 dotted;
+}
+
+.logo {
+  min-width: 300px;
+}
+
+.logo img {
+  margin: 5px 0 0 45px;
+  min-width: 50%;
+  height: 50px;
+  opacity: 0.5;
+  transition: 1s opacity 0.01s;
+}
+
+header:hover .logo img,
+header:hover .phone,
+/*header:hover .menu-item,*/
+.player-slider:hover,
+section:hover {
+  opacity: 1;
+}
+
+
+/*---------PLATER SLIDER STYLES-----*/
+
+.player-slider {
+  position: absolute;
+  top: 15px;
+  left: 25%;
+  width:10px;
+  height:30px;
+  opacity: 0.5;
+  transition: 1s opacity 0.01s;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  background:transparent;
+  width: 50%;
+  margin: 0 5px;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 50%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
+  background: rgba(255,255,255,0.8);
+  border-radius: 1.3px;
+  border: 0.2px solid rgba(1, 1, 1, 0);
+}
+
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: #d01410;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3.5px;
+  box-shadow:0 0 2px rgba(0,0,0,0.2);
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #fff;
+}
+
+input[type=range]::-moz-range-track {
+  width: 50%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
+  background: #ffffff;
+  border-radius: 1.3px;
+  border: 0.2px solid rgba(1, 1, 1, 0);
+}
+
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: #d01410;
+  cursor: pointer;
+}
+/*-------------------*/
+
+.contacts {
+  min-width: 300px;
+  padding-top: 5px;
+}
+
+.phone {
+  margin: 0 auto;
+  line-height: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  opacity: 0.5;
+  transition: 1s opacity 0.01s;
+}
+
+/*-----------MAIN MENU-----------*/
+
+.main-menu {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.menu-item {
+  text-decoration: none;
+  color: #000;
+  opacity: 0.5;
+  transition: 1s opacity 0.01s;
+}
+
+.main-menu a {
+  flex: 1;
+  height: 25px;
+  text-align: center;
+  text-transform: uppercase;
+  list-style: none;
+}
+
+/*------SECTION AND TEXT-------*/
+
+section {
+  width: 60%;
+  height: 50vh;
+  margin: 80px auto;
+  position: relative;
+  opacity: 0.05;
+  transition: 1s opacity;
+}
+
+.text {
+  width: 49%;
+  color: #fff;
+  font-size: 0.8em;
+  z-index: 2;
+}
+
+.text-img {
+  z-index: 1;
+  width: 50%;
+  height: 286px;
+  position: absolute;
+  top: -84px;
+  left: 23%;
+}
+
+.text-left {
+  float: left;
+}
+
+.text-right {
+  float: right;
+}
+
+.text:before {
+  content: "";
+  width: 50%;
+  height: 190px;
+}
+
+.text-left:before {
+  float: right;
+}
+
+.text-right:before {
+  float: left;
+}
+
+
+/*---------MEDIA QUERIES--------*/
+
+@media all and (max-width: 1100px) {
+  .text-img {
+    width: 57%;
+    left: 20%;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .text-img {
+    width: 54%;
+    left: 21%;
+    height: 236px;
+    top: -24px;
+  }
+
+  .player-slider { left: 35%; }
+  input[type=range] { width: 25%; }
+  input[type=range]::-webkit-slider-runnable-track { width: 25%; }
+  input[type=range]::-moz-range-track { width: 25%; }
+}
+
+
+@media all and (max-width: 700px) {
+  .main-menu { flex-direction: column; }
+  header { height: 205px; }
+}
