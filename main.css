@@ -84,7 +84,7 @@ a {
 
 .player-slider {
   margin-top: 25px !important;
-  min-width: 100px;
+  min-width: 200px;
   height: 20px;
   background: rgba(208, 23, 70, 1);
   border: 1px #000 solid;
@@ -137,7 +137,7 @@ input[type=range]::-moz-range-thumb {
   cursor: pointer;
 }
 
-/*----------HEADER-------*/
+/*---------------HEADER--------------*/
 
 header {
   width: 100%;
@@ -154,11 +154,11 @@ header {
 }
 
 .logo-contanier {
-  min-width: 300px;
+  min-width: 200px;
 }
 
 .logo {
-  margin: 5px 0 0 95px;
+  margin: 5px 0 0 50px;
   min-width: 25%;
   height: 68px;
   opacity: 0.7;
@@ -166,15 +166,15 @@ header {
 }
 
 
+.player-slider:hover,
 header:hover .logo,
 header:hover .phone,
-.player-slider:hover,
 section:hover {
   opacity: 1;
 }
 
 .contacts {
-  min-width: 300px;
+  min-width: 200px;
   padding-top: 10px;
 }
 
@@ -187,11 +187,11 @@ section:hover {
 }
 
 .contacts:hover .phone-top {
-    background-position: -100%;
+  background-position: -100%;
 }
 
 .contacts:hover .phone-bottom {
-    background-position: 100%;
+  background-position: 100%;
 }
 
 .phone {
@@ -242,49 +242,48 @@ section {
   transition: 1s opacity ease-in-out;
 }
 
-.text {
-  width: 49%;
-  color: #fff;
-  font-size: 0.8em;
-  z-index: 2;
-
-  background-size: 200%;
-  transition: 0.5s all ease-in-out;
-}
-
-section:hover .text-left {
-    background-position: 100%;
-}
-
-section:hover .text-right {
-    background-position: -100%;
-}
-
-
-
 .text-img {
   z-index: 1;
   width: 50%;
-  height: 286px;
+  height: auto;
+  padding-top: 25px;
   position: absolute;
   top: -84px;
   left: 23%;
 }
 
+.text {
+  width: 49.7%;
+  color: #fff;
+  font-size: 0.8em;
+  opacity: .99;
+  background-size: 200%;
+  background-image: linear-gradient(to right, transparent 50%, rgba(208, 23, 70, 0.7) 50%);
+  transition: 0.5s all ease-in-out;
+}
+
 .text-left {
   float: left;
-  background-image: linear-gradient(to right, transparent 50%, rgba(208, 23, 70, 0.7) 50%);
 }
 
 .text-right {
   float: right;
-  background-image: linear-gradient(to right, transparent 50%, rgba(208, 23, 70, 0.7) 50%);
+}
+
+section:hover .text-left {
+  background-position: 100%;
+}
+
+section:hover .text-right {
+  background-position: -100%;
 }
 
 .text:before {
+  z-index: 0;
   content: "";
   width: 50%;
-  height: 190px;
+  height: 140px;
+  background: transparent;
 }
 
 .text-left:before {
@@ -298,45 +297,43 @@ section:hover .text-right {
 
 /*---------MEDIA QUERIES--------*/
 
-@media screen and (max-width: 1100px) {
-  .text-img {
-    width: 57%;
-    left: 20%;
-  }
+
+@media screen and (max-width: 1250px) {
+  .text:before { height: 90px; }
 }
 
 @media screen and (max-width: 900px) {
   .text-img {
-    width: 54%;
-    left: 21%;
-    height: 236px;
-    top: -24px;
+    height: auto;
+    padding-top: 65px;
   }
-
-  .player-slider { left: 35%; }
-  input[type=range] { width: 25%; }
-  input[type=range]::-webkit-slider-runnable-track { width: 25%; }
-  input[type=range]::-moz-range-track { width: 25%; }
 }
 
+@media screen and (max-width: 800px) {
+  input[type=range] { width: 25%; }
+  input[type=range]::-webkit-slider-runnable-track { width: 35%; }
+  input[type=range]::-moz-range-track { width: 35%; }
 
-@media screen and (max-width: 700px) {
   .player-slider { 
-    left: 46%; 
+    left: 55%; 
     margin-top: 30px !important;
     height: 10px;
   }
+
   input[type=range]::-webkit-slider-thumb {
-  height: 35px;
-  width: 35px;
-  margin-top: -18px;
-  border: 3px rgba(0,0,0, 0.8) solid;
+    height: 35px;
+    width: 35px;
+    margin-top: -18px;
+    border: 3px rgba(0,0,0, 0.8) solid;
   } 
 
   input[type=range]::-moz-range-thumb {
-  height: 35px;
-  width: 35px;
+    height: 35px;
+    width: 35px;
   }
+}
+
+@media screen and (max-width: 700px) {
   .main-menu { flex-direction: column; }
   header { height: 205px; }
 }
@@ -345,7 +342,6 @@ section:hover .text-right {
   input[type=range] { width: 25%; }
   input[type=range]::-webkit-slider-runnable-track { width: 25%; }
   input[type=range]::-moz-range-track { width: 25%; }
-  
   header { height: 205px; }
 }
 
