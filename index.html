@@ -52,6 +52,8 @@
 		}
 
 
+		if (video.paused) { video.play };
+
 		function addClass() {
 			this.classList.contains('menu-item') ? this.classList.add('opacity') : this.classList.add('pulse', 'animated', 'infinite')
 		}
@@ -66,7 +68,7 @@
 		logo.addEventListener('mouseout', removeClass);
 
 		menuItems.forEach(menuItem => menuItem.addEventListener('mouseover', addClass));
-	  menuItems.forEach(menuItem => menuItem.addEventListener('mouseout', removeClass));
+		menuItems.forEach(menuItem => menuItem.addEventListener('mouseout', removeClass));
 
 		ranges.forEach(range => range.addEventListener('change', handleRangeUpdate));
 		ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate));
